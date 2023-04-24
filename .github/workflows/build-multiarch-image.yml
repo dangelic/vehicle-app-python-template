@@ -28,6 +28,11 @@ jobs:
     name: Setting up build matrix
     outputs:
       deployment-matrix: ${{ steps.export-deployment-matrix.outputs.deployment-matrix }}
+      
+    permissions:
+      issues: read
+      checks: write
+      pull-requests: write
 
     steps:
       - name: Checkout repository
@@ -42,6 +47,10 @@ jobs:
 
   build-image-multiarch:
     uses: ./.github/workflows/build-docker-image.yml
+    permissions:
+      issues: read
+      checks: write
+      pull-requests: write
     needs: [initialize-matrix]
     with:
       platform: multiarch
