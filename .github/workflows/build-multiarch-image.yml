@@ -33,6 +33,7 @@ jobs:
       issues: read
       checks: write
       pull-requests: write
+      contents: read
 
     steps:
       - name: Checkout repository
@@ -51,6 +52,7 @@ jobs:
       issues: read
       checks: write
       pull-requests: write
+      contents: read
     needs: [initialize-matrix]
     with:
       platform: multiarch
