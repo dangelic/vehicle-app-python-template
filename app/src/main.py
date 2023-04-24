@@ -64,7 +64,6 @@ class SampleApp(VehicleApp):
         # Vehicle DataBroker is ready.
         # Here you can subscribe for the Vehicle Signals update (e.g. Vehicle Speed).
         await self.Vehicle.Speed.subscribe(self.on_speed_change)
-        
 
     async def on_speed_change(self, data: DataPointReply):
         """The on_speed_change callback, this will be executed when receiving a new
