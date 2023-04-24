@@ -35,6 +35,12 @@ jobs:
     container: ghcr.io/eclipse-velocitas/devcontainer-base-images/python:latest
     name: Run unit tests and linters
 
+    permissions:
+      contents: read
+      issues: read
+      checks: write
+      pull-requests: write
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
