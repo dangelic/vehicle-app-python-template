@@ -15,8 +15,6 @@
 
 name: Release workflow
 
-permissions:
-  packages: write
 on:
   release:
     types: [published, edited]
@@ -42,6 +40,8 @@ jobs:
   upload-images:
     name: "Upload image (${{ matrix.component.Name }})"
     runs-on: ubuntu-latest
+    permissions:
+      packages: write
     needs: initialize-matrix
     strategy:
       matrix:
