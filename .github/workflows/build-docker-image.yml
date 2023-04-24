@@ -45,12 +45,6 @@ jobs:
     outputs:
       imageid: ${{ steps.image_build.outputs.imageid }}
       imagedigest: ${{ steps.image_build.outputs.imagedigest }}
-      
-    permissions:
-      contents: read
-      issues: read
-      checks: write
-      pull-requests: write
 
     steps:
       - name: Checkout repository
