@@ -102,7 +102,7 @@ jobs:
       - name: ${{ matrix.component.Name }} -- Download CI artifacts
         uses: dawidd6/action-download-artifact@v2
         with:
-          workflow: ci.yml
+          workflow: build-multiarch-image.yml
           workflow_conclusion: success
           path: ./ci-artifacts
 
@@ -112,4 +112,4 @@ jobs:
         with:
           files: |
             ./ci-artifacts/AppManifest/AppManifest.json
-            ./ci-artifacts/sampleapp-amd64/sampleapp.tar
+            ./ci-artifacts/sampleapp-multiarch/sampleapp.tar
