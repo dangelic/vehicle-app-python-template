@@ -106,7 +106,7 @@ class SampleApp(VehicleApp):
                 {
                     "result": {
                         "status": 0,
-                        "message": f"""Current Speed = {vehicle_speed}""",
+                        "message": f"""Current Speed is = {vehicle_speed}""",
                     },
                 }
             ),
