@@ -42,6 +42,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       packages: write
+      contents: write
     needs: initialize-matrix
     strategy:
       matrix:
@@ -101,7 +102,7 @@ jobs:
       - name: ${{ matrix.component.Name }} -- Download CI artifacts
         uses: dawidd6/action-download-artifact@v2
         with:
-          workflow: build-multiarch-image.yml
+          workflow: ci.yml
           workflow_conclusion: success
           path: ./ci-artifacts
 
