@@ -110,4 +110,6 @@ jobs:
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          files: ./ci-artifacts/AppManifest/AppManifest.json
+          files: |
+            ./ci-artifacts/AppManifest/AppManifest.json
+            ./ci-artifacts/sampleapp-amd64/sampleapp.tar
