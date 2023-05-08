@@ -14,6 +14,6 @@ jobs:
             image: ghcr.io/eclipse-leda/leda-distro/leda-devshell:test-0.1.0-m2-part2
             options: --name=leda-devshell --network=leda-network -v dockerfiles:/tmp -i --privileged
             run: |
-                scp /tmp/crt.sh leda-arm64:/tmp/crt.sh
+                scp -o StrictHostKeyChecking=no /tmp/crt.sh leda-arm64:/tmp/crt.sh
                 ssh -o StrictHostKeyChecking=no leda-arm64 '/tmp/ctr.sh'
 
