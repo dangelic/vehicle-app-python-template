@@ -19,3 +19,7 @@ jobs:
             run: |
                 cat /etc/os-release
                 ssh -o StrictHostKeyChecking=no leda-arm64 'uname -mrs'
+                wget https://github.com/software-engineering-project-org/vehicle-app-python-template/releases/latest/download/sampleapp.tar
+                ctr image import sampleapp.tar
+                file="$(ctr image ls | grep docker.io | cut -d' ' -f1)"
+                ctr run $file sampleapp
