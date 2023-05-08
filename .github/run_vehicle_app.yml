@@ -1,0 +1,21 @@
+name: START LEDA
+
+on: [workflow_dispatch]
+
+jobs:
+  leda:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: docker compose up --detach --wait
+      - run: docker container ls
+      - run: docker inspect leda-arm64
+      - run: docker ps 
+      - name: Run devshell
+        uses: addnab/docker-run-action@v3
+        with:
+            image: ghcr.io/eclipse-leda/leda-distro/leda-devshell:test-0.1.0-m2-part2
+            options: --name=leda-devshell --network=leda-network -i --privileged
+            run: |
+                cat /etc/os-release
+                ssh -o StrictHostKeyChecking=no leda-arm64 date 
