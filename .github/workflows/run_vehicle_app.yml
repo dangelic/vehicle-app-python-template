@@ -18,4 +18,4 @@ jobs:
             options: --name=leda-devshell --network=leda-network -i --privileged
             run: |
                 cat /etc/os-release
-                ssh -o StrictHostKeyChecking=no leda-arm64 date 
+                ssh -o StrictHostKeyChecking=no leda-arm64 'uname -mrs'
