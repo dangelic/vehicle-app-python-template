@@ -15,7 +15,7 @@ jobs:
         uses: addnab/docker-run-action@v3
         with:
             image: ghcr.io/eclipse-leda/leda-distro/leda-devshell:test-0.1.0-m2-part2
-            options: --name=leda-devshell --network=leda-network -v ./ctr.sh:/tmp/ctr.sh -i --privileged
+            options: --name=leda-devshell --network=leda-network -i --privileged
             run: |
                 ssh -o StrictHostKeyChecking=no leda-arm64 '/tmp/ctr.sh'
 
