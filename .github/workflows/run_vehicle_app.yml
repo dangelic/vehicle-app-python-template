@@ -15,11 +15,7 @@ jobs:
         uses: addnab/docker-run-action@v3
         with:
             image: ghcr.io/eclipse-leda/leda-distro/leda-devshell:test-0.1.0-m2-part2
-            options: --name=leda-devshell --network=leda-network -i --privileged
+            options: --name=leda-devshell --network=leda-network -v ${PWD}/ctr.sh:/tmp/ctr.sh -i --privileged
             run: |
-                cat /etc/os-release
-                ssh -o StrictHostKeyChecking=no leda-arm64 'uname -mrs'
-                wget https://github.com/software-engineering-project-org/vehicle-app-python-template/releases/latest/download/sampleapp.tar
-                ctr image import sampleapp.tar
-                file="$(ctr image ls | grep docker.io | cut -d' ' -f1)"
-                ctr run $file sampleapp
+                ssh -o StrictHostKeyChecking=no leda-arm64 '/tmp/ctr.sh'
+
