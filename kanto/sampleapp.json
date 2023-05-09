@@ -1,59 +1,37 @@
 {
-    "container_name": "",
+    "id": "sampleapp",
+    "name": "sampleapp",
     "image": {
-        "name": "",
-        "decrypt_config": {
-            "keys": [],
-            "recipients": []
-        }
+        "name": "ghcr.io/eclipse-velocitas/vehicle-app-python-template/sampleapp:test_tag",
+        "decrypt_config": null
     },
-    "domain_name": "",
     "host_name": "",
-    "mount_points": [
-        {
-            "destination": "",
-            "source": "",
-            "propagation_mode": "rprivate"
-        }
-    ],
-    "config": {
-        "env": [],
-        "cmd": []
-    },
-    "io_config": {
-        "open_stdin": false,
-        "tty": false
-    },
+    "domain_name": "",
+    "resolv_conf_path": "",
+    "hosts_path": "",
+    "hostname_path": "",
+    "mounts": [],
+    "hooks": [],
     "host_config": {
-        "devices": [
-            {
-                "path_on_host": "",
-                "path_in_container": "",
-                "cgroup_permissions": "rwm"
-            }
-        ],
+        "devices": [],
         "network_mode": "bridge",
         "privileged": false,
+        "restart_policy": {
+            "maximum_retry_count": 0,
+            "retry_timeout": 0,
+            "type": "unless-stopped"
+        },
+        "runtime": "io.containerd.runc.v2",
         "extra_hosts": [],
         "port_mappings": [
             {
-                "proto": "tcp",
-                "container_port": 0,
-                "host_ip": "0.0.0.0",
-                "host_port": 0,
-                "host_port_end": 0
+              "protocol": "tcp",
+              "container_port": 30151,
+              "host_ip": "localhost",
+              "host_port": 50151,
+              "host_port_end": 50151
             }
         ],
-        "resources": {
-            "memory": "",
-            "memory_reservation": "",
-            "memory_swap": ""
-        },
-        "restart_policy": {
-            "type": "unless-stopped",
-            "maximum_retry_count": 0,
-            "retry_timeout": 0
-        },
         "log_config": {
             "driver_config": {
                 "type": "json-file",
@@ -63,8 +41,41 @@
             },
             "mode_config": {
                 "mode": "blocking",
-                "max_buffer_size": "1M"
+                "max_buffer_size": ""
             }
-        }
-    }
+        },
+        "resources": null
+    },
+    "io_config": {
+        "attach_stderr": false,
+        "attach_stdin": false,
+        "attach_stdout": false,
+        "open_stdin": false,
+        "stdin_once": false,
+        "tty": false
+    },
+    "config": {
+        "env": [
+           "VEHICLEDATABROKER_DAPR_APP_ID=vehicledatabroker"
+        ],
+        "cmd": []
+    },
+    "network_settings": null,
+    "state": {
+        "pid": -1,
+        "started_at": "",
+        "error": "",
+        "exit_code": 0,
+        "finished_at": "",
+        "exited": false,
+        "dead": false,
+        "restarting": false,
+        "paused": false,
+        "running": false,
+        "status": "",
+        "oom_killed": false
+    },
+    "created": "",
+    "manually_stopped": false,
+    "restart_count": 0
 }
