@@ -15,9 +15,10 @@ jobs:
             options: --name=leda-devshell --network=leda-network -v ${{ github.workspace }}/kanto:/kanto/ -i --privileged
             run: |
                 scp -o StrictHostKeyChecking=no /kanto/sampleapp.json leda-arm64:/data/var/containers/manifests/sampleapp.json
+                ssh -o StrictHostKeyChecking=no leda-arm64 'ls /data/var/containers/manifests'
                 ssh -o StrictHostKeyChecking=no leda-arm64 'systemctl restart kanto-auto-deployer'
                 ssh -o StrictHostKeyChecking=no leda-arm64 'systemctl status kanto-auto-deployer'
-                ssh -o StrictHostKeyChecking=no leda-arm64 'sleep 15'
+                ssh -o StrictHostKeyChecking=no leda-arm64 'sleep 30'
                 ssh -o StrictHostKeyChecking=no leda-arm64 'kanto-cm list'
                 ssh -o StrictHostKeyChecking=no leda-arm64 'kanto-cm logs sampleapp'
 
