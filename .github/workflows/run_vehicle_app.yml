@@ -18,6 +18,6 @@ jobs:
                 ls /kanto
                 scp -o StrictHostKeyChecking=no /kanto/ctr.sh leda-arm64:/tmp/ctr.sh
                 ssh -o StrictHostKeyChecking=no leda-arm64 'ls /tmp'
-                ssh -o StrictHostKeyChecking=no leda-arm64 '/tmp/ctr.sh'
+                ssh -o StrictHostKeyChecking=no leda-arm64 'sh /tmp/ctr.sh'
 
 
