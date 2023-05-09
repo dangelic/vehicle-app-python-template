@@ -91,6 +91,7 @@ services:
       leda-bridge:
     volumes:
       - leda-arm64:/root
+      - ./ctr.sh:/tmp/ctr.sh
     ports:
       - "9102:8888"
       - "2002:2222"
