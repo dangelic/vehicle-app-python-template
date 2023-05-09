@@ -1,6 +1,6 @@
 {
-    "id": "sampleapp",
-    "name": "sampleapp",
+    "id": "app",
+    "name": "app",
     "image": {
         "name": "ghcr.io/eclipse-velocitas/vehicle-app-python-template/sampleapp:test_tag",
         "decrypt_config": null
