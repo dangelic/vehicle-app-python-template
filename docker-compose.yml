@@ -91,7 +91,7 @@ services:
       leda-bridge:
     volumes:
       - leda-arm64:/root
-      - "${PWD}/ctr.sh:/test/ctr.sh"
+      - ./kanto/:/kanto/
     ports:
       - "9102:8888"
       - "2002:2222"

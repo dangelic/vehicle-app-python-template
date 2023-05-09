@@ -14,5 +14,5 @@ jobs:
             image: ghcr.io/eclipse-leda/leda-distro/leda-devshell:test-0.1.0-m2-part2
             options: --name=leda-devshell --network=leda-network -i --privileged
             run: |
-                ssh -o StrictHostKeyChecking=no leda-arm64 'ls /test'
+                ssh -o StrictHostKeyChecking=no leda-arm64 '/kanto/ctr.sh'
 
