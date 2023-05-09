@@ -91,7 +91,10 @@ services:
       leda-bridge:
     volumes:
       - leda-arm64:/root
-      - ./kanto/:/kanto/
+      - type: bind
+        source: ./kanto/ctr.sh
+        target: /kanto/ctr.sh
+        read_only: true
     ports:
       - "9102:8888"
       - "2002:2222"
