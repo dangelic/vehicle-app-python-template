@@ -1,0 +1,20 @@
+name: START LEDA CTR
+
+on: [workflow_dispatch]
+
+jobs:
+  leda:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: docker compose up --detach --wait
+      - name: Run devshell
+        uses: addnab/docker-run-action@v3
+        with:
+            image: ghcr.io/eclipse-leda/leda-distro/leda-devshell:test-0.1.0-m2-part2
+            options: --name=leda-devshell --network=leda-network -v ${{ github.workspace }}/kanto:/kanto/ -i --privileged
+            run: |
+                scp -o StrictHostKeyChecking=no /kanto/ctr.sh leda-arm64:/tmp/ctr.sh
+                ssh -o StrictHostKeyChecking=no leda-arm64 'sh /tmp/ctr.sh'
+
+
