@@ -12,7 +12,12 @@ jobs:
         uses: addnab/docker-run-action@v3
         with:
             image: ghcr.io/eclipse-leda/leda-distro/leda-devshell:test-0.1.0-m2-part2
-            options: --name=leda-devshell --network=leda-network -i --privileged
+            options: --name=leda-devshell --network=leda-network -v kanto/:/kanto/ -i --privileged
             run: |
+                ls
+                ls /kanto
+                scp -o StrictHostKeyChecking=no /kanto/ctr.sh leda-arm64:/tmp/ctr.sh
+                ssh -o StrictHostKeyChecking=no leda-arm64 'ls /tmp'
                 ssh -o StrictHostKeyChecking=no leda-arm64 '/kanto/ctr.sh'
+
 
