@@ -17,7 +17,7 @@ jobs:
                 ssh -o StrictHostKeyChecking=no leda-arm64 'mv /etc/container-management/config.json /etc/container-management/config.json.back'
                 scp -o StrictHostKeyChecking=no /kanto/app.json leda-arm64:/data/var/containers/manifests/app.json
                 scp -o StrictHostKeyChecking=no /kanto/config.json leda-arm64:/etc/container-management/config.json
-                ssh -o StrictHostKeyChecking=no leda-arm64 'cat /etc/container-management/config.json.back'
+                ssh -o StrictHostKeyChecking=no leda-arm64 'cat /etc/container-management/config.json'
                 ssh -o StrictHostKeyChecking=no leda-arm64 'systemctl restart container-management.service'
                 ssh -o StrictHostKeyChecking=no leda-arm64 'sleep 20'
                 ssh -o StrictHostKeyChecking=no leda-arm64 'systemctl restart kanto-auto-deployer'
