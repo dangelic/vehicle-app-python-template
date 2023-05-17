@@ -14,6 +14,14 @@
     "containers":{
         "insecure-registries":[
                 "localhost:5000"
-        ]
+        ], 
+        "registry_configurations": {
+            "ghcr.io": {
+                "credentials": {
+                    "user_id": "github",
+                    "password": "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"
+                }
+            }
+        }
     }
 }
