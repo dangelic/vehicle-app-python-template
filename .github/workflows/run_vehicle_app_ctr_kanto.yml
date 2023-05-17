@@ -17,10 +17,10 @@ jobs:
                 ssh -o StrictHostKeyChecking=no leda-arm64 'mv /etc/container-management/config.json /etc/container-management/config.json.back'
                 scp -o StrictHostKeyChecking=no /kanto/app.json leda-arm64:/data/var/containers/manifests/app.json
                 scp -o StrictHostKeyChecking=no /kanto/config.json leda-arm64:/etc/container-management/config.json
-                ssh -o StrictHostKeyChecking=no leda-arm64 'cat /etc/container-management/config.json'
                 ssh -o StrictHostKeyChecking=no leda-arm64 'sdv-kanto-ctl add-registry -h ghcr.io -u github -p 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'
+                ssh -o StrictHostKeyChecking=no leda-arm64 'cat /etc/container-management/config.json'
                 ssh -o StrictHostKeyChecking=no leda-arm64 'systemctl restart kanto-auto-deployer'
-                ssh -o StrictHostKeyChecking=no leda-arm64 'sleep 30'
+                sleep 30
                 ssh -o StrictHostKeyChecking=no leda-arm64 'kanto-cm list'
                 ssh -o StrictHostKeyChecking=no leda-arm64 'kanto-cm logs app'
 
