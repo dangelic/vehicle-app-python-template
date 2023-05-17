@@ -2,7 +2,7 @@
     "id": "app",
     "name": "app",
     "image": {
-        "name": "ghcr.io/eclipse-velocitas/vehicle-app-python-template/sampleapp:test_tag",
+        "name": "ghcr.io/software-engineering-project-org/vehicle-app-python-template/sampleapp:1.0.5",
         "decrypt_config": null
     },
     "host_name": "",
