@@ -3,7 +3,7 @@
 IP="$1"
 
 # Backup of current config json 
-ssh root@$IP 'mv config.json /etc/container-management/config.json.back'
+ssh root@$IP 'mv /etc/container-management/config.json /etc/container-management/config.json.back'
 
 # Copy new config json 
 scp config.json root@$IP:/etc/container-management/config.json
