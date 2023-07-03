@@ -45,4 +45,25 @@
         "vscode-kubernetes.kubectl-path.linux": "/usr/bin/kubectl",
         "vscode-kubernetes.helm-path.linux": "/usr/local/bin/helm"
     },
+
+    "automotive-app-deployment.devices": [
+        {
+            "name": "Azure",
+            "ip": "127.0.0.1",
+            "sshPort": 2222,
+            "sshUsername": "root",
+            "sshPassword": "",
+            "sshPrivateKeyPath": "/path/to/id_rsa",
+            "sshPublicKeyPath": "/path/to/id_rsa.pub"
+        },
+        {
+            "name": "Pi",
+            "ip": "192.168.178.84",
+            "sshPort": 22,
+            "sshUsername": "cro",
+            "sshPassword": "cro",
+            "sshPrivateKeyPath": "/path/to/id_rsa",
+            "sshPublicKeyPath": "/path/to/id_rsa.pub"
+        }
+    ],
 }
